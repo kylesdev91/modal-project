@@ -1,4 +1,5 @@
 <template>
+  <h1>{{ title }}</h1>
   <!-- <h1>My First Vue App!</h1> -->
   <p>Welcome...</p>
   <div v-if="showModal">
