@@ -1,7 +1,7 @@
 <template>
   <div class="backdrop" @click="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
-      <h1>{{ header }}</h1>
+      <h1>{{ heading }}</h1>
       <p>{{ text }}</p>
     </div>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ['header', 'text', 'theme'],
+  props: ['heading', 'text', 'theme'],
   methods: {
     closeModal() {
       this.$emit('close');
@@ -22,7 +22,7 @@ export default {
 .modal {
   width: 400px;
   padding: 20px;
-  margin: 100px auto;
+  margin: 200px auto;
   background: white;
   border-radius: 10px;
 }
@@ -33,17 +33,16 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 .modal h1 {
   color: #03cfb4;
   border: none;
   padding: 0;
 }
-
 .modal p {
   font-style: normal;
 }
 
+/* sale styles */
 .modal.sale {
   background: crimson;
   color: white;

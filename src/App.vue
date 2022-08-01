@@ -1,30 +1,28 @@
 <template>
   <h1>{{ title }}</h1>
-  <!-- <h1>My First Vue App!</h1> -->
   <p>Welcome...</p>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toogleModal" />
+    <Modal :heading="heading" :text="text" theme="sale" @close="toggleModal" />
   </div>
-  <button @click="toogleModal">open modal</button>
+  <button @click="toggleModal">open modal</button>
 </template>
 
 <script>
-import Modal from './components/Modal.vue';
+import Modal from './components/Modal';
+
 export default {
   name: 'App',
-  components: {
-    Modal,
-  },
+  components: { Modal },
   data() {
     return {
       title: 'My First Vue App!',
-      header: 'Sign up for the Giveaway!',
+      heading: 'Sign up for the Givaway!',
       text: 'Grab your ninja swag for half price!',
       showModal: false,
     };
   },
   methods: {
-    toogleModal() {
+    toggleModal() {
       this.showModal = !this.showModal;
     },
   },
